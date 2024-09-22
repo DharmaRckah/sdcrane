@@ -1,3 +1,4 @@
+
 import React from "react";
 import singleGrider from "../assets/passets/singleGrider.jpg";
 import doubleGrider from "../assets/passets/doubleGrider.jpg";
@@ -112,33 +113,32 @@ const productData = [
 
 const Products = () => {
   return (
-    <div
-      className="container mx-auto pt-20 px-4 bg-white z-[100] relative"
-      data-aos="fade-right"
-    >
-      <h2 className="text-3xl bg-yellow-500 text-white font-bold text-center py-3 w-full mb-8">
-        Our Products
-      </h2>
+    <div className="w-full bg-white z-[100] py-20 px-4" data-aos="fade-right">
+      <div className="container mx-auto">
+        <h2 className="text-3xl bg-yellow-500 text-white font-bold text-center py-3 w-full mb-8">
+          Our Products
+        </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {productData.map((product, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-lg rounded-lg mx-2 my-2 overflow-hidden hover:scale-105 transform transition-transform duration-300"
-          >
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-orange-500 mb-2">
-                {product.title}
-              </h3>
-              <p className="text-sm text-gray-700">{product.description}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {productData.map((product, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg mx-2 my-2 overflow-hidden hover:scale-105 transform transition-transform duration-300"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-orange-500 mb-2">
+                  {product.title}
+                </h3>
+                <p className="text-sm text-gray-700">{product.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
