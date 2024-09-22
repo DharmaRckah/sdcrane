@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-
+import LoaderC from "../utils/LoaderC.js";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -72,7 +72,7 @@ const ContactForm = () => {
         </div>
         <form onSubmit={handleSubmit}>
           {/* Name */}
-          <div className="mb-4 relative">
+          <div className="mb-4 relative ">
             <input
               type="text"
               id="name"
@@ -102,7 +102,7 @@ const ContactForm = () => {
           {/* Phone Number */}
           <div className="mb-4 relative">
             <input
-              type="tel"
+              type="number"
               id="phone"
               name="phone"
               value={formData.phone}
@@ -132,7 +132,7 @@ const ContactForm = () => {
             <button
               type="button"
               onClick={handleCancel}
-              className="w-1/2 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200 ml-2"
+              className="w-1/2 mr-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white py-2 rounded-lg hover:bg-gradient-to-r hover:from-teal-400 hover:to-blue-500 transition duration-200"
             >
               Cancel
             </button>
@@ -140,7 +140,7 @@ const ContactForm = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-1/2 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200 ml-2"
+              className="w-1/2 mr-2 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-200 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500"
             >
               Send Message
             </button>

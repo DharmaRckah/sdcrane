@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 import { useAuth } from "../context/Auth.js";
 import axios from "axios";
-import Loader from "../utils/Loader.js";
+import Loader from "../utils/LoaderC.js";
 
 export const ProtectedRoutes = () => {
   const [ok, setOk] = useState(false);

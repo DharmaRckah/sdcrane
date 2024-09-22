@@ -44,7 +44,7 @@ export const createMessageController = async (req, res) => {
       subject: subject,
       text: message,
     });
-    console.log(info, info1);
+
     res.status(201).send("Contact form submitted successfully");
   } catch (error) {
     console.log(error);
@@ -54,7 +54,7 @@ export const createMessageController = async (req, res) => {
 
 export const getMessageController = async (req, res) => {
   try {
-const contacts = await ContactModel.find().sort({ createdAt: -1 });
+    const contacts = await ContactModel.find().sort({ createdAt: -1 });
 
     res.status(200).send(contacts);
   } catch (error) {

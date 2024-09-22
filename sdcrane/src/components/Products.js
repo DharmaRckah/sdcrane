@@ -112,7 +112,10 @@ const productData = [
 
 const Products = () => {
   return (
-    <div className="container mx-auto  pt-20 px-4" data-aos="fade-right">
+    <div
+      className="container mx-auto pt-20 px-4 bg-white z-[100] relative"
+      data-aos="fade-right"
+    >
       <h2 className="text-3xl bg-yellow-500 text-white font-bold text-center py-3 w-full mb-8">
         Our Products
       </h2>

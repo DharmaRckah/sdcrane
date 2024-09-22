@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../context/Auth"; // Assuming you have a custom Auth context
-import Loader from "../utils/Loader";
+import Loader from "../utils/LoaderC";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -121,7 +121,7 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={handleCancel}
-                  className="w-1/2 mr-2 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-200 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 "
+                  className="w-1/2 mr-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white py-2 rounded-lg hover:bg-gradient-to-r hover:from-teal-400 hover:to-blue-500 transition duration-200"
                 >
                   Cancel
                 </button>
