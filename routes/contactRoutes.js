@@ -6,6 +6,6 @@ import {
 const router = express.Router();
 
 router.post("/createContact", createMessageController);
-router.get("/getContact", getMessageController);
+router.get("/getContact".isLogin,isAdmin, getMessageController);
 
 export default router;

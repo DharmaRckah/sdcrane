@@ -29,7 +29,6 @@ const ContactForm = () => {
         "/api/v1/contact/createContact",
         formData
       );
-      console.log(response, "res of try");
       if (response.status === 201) {
         toast.success("Message sent successfully!", {
           position: "top-right",
@@ -45,7 +44,6 @@ const ContactForm = () => {
         }, 2000); // Optional delay to allow the user to see the success message
       }
     } catch (error) {
-      console.log(error.response);
       toast.error("Failed to send message. Please try again later.", {
         position: "top-right",
         autoClose: 3000,
@@ -57,96 +55,97 @@ const ContactForm = () => {
     }
   };
 
+  const handleCancel = () => {
+    navigate("/"); // Navigate to home page
+  };
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-400 via-red-500 to-blue-500 px-3 from-green-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 ">
       <ToastContainer />
-      <div className="bg-white p-10 rounded-lg shadow-md w-full max-w-3xl flex">
-        <div className="w-1/2 pr-10">
-          <form onSubmit={handleSubmit}>
-            {/* Name */}
-            <div className="mb-4">
-              <label
-                htmlFor="name"
-                className="block text-lg text-gray-700 font-medium mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full p-3 text-lg border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
+      <div
+        className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md"
+        data-aos="zoom-in-right"
+      >
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold text-gray-800">Contact Us</h2>
+          <p className="text-gray-600">We'd love to hear from you!</p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          {/* Name */}
+          <div className="mb-4 relative">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+              className="pl-4 py-2 w-full border rounded-lg focus:ring focus:outline-none focus:border-blue-400"
+              required
+            />
+          </div>
 
-            {/* Email */}
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-lg text-gray-700 font-medium mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full p-3 text-lg border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
+          {/* Email */}
+          <div className="mb-4 relative">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your email"
+              className="pl-4 py-2 w-full border rounded-lg focus:ring focus:outline-none focus:border-blue-400"
+              required
+            />
+          </div>
 
-            {/* Phone Number */}
-            <div className="mb-4">
-              <label
-                htmlFor="phone"
-                className="block text-lg text-gray-700 font-medium mb-2"
-              >
-                Phone number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full p-3 text-lg border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+          {/* Phone Number */}
+          <div className="mb-4 relative">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Your phone number"
+              className="pl-4 py-2 w-full border rounded-lg focus:ring focus:outline-none focus:border-blue-400"
+            />
+          </div>
 
-            {/* Message */}
-            <div className="mb-4">
-              <label
-                htmlFor="message"
-                className="block text-lg text-gray-700 font-medium mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full p-3 text-lg border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                rows="5"
-                required
-              ></textarea>
-            </div>
+          {/* Message */}
+          <div className="mb-4 relative">
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your message"
+              className="pl-4 py-2 w-full border rounded-lg focus:ring focus:outline-none focus:border-blue-400"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex justify-between">
+            {/* Cancel Button */}
+            <button
+              type="button"
+              onClick={handleCancel}
+              className="w-1/2 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200 ml-2"
+            >
+              Cancel
+            </button>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-500 text-black p-4 px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors text-lg"
+              className="w-1/2 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200 ml-2"
             >
               Send Message
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -41,7 +41,6 @@ const Login = () => {
     try {
       const response = await axios.post("/api/v1/auth/login", formData);
 
-
       if (response.data.success) {
         toast.success(response.data.message);
 
@@ -69,17 +68,18 @@ const Login = () => {
     }
   };
 
+  const handleCancel = () => {
+    navigate("/");
+  };
+
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600"
-   
-    >
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600 px-3 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 ">
       <div
         className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md"
         data-aos="zoom-in-right"
       >
         {loading ? (
-          <div className="flex justify-center items-center ">
+          <div className="flex justify-center items-center">
             <Loader />
           </div>
         ) : (
@@ -100,7 +100,7 @@ const Login = () => {
                   className="pl-10 py-2 w-full border rounded-lg focus:ring focus:outline-none focus:border-blue-400"
                   value={formData.email}
                   onChange={handleChange}
-                  required
+                  // required
                 />
               </div>
               <div className="mb-6 relative">
@@ -114,16 +114,25 @@ const Login = () => {
                   className="pl-10 py-2 w-full border rounded-lg focus:ring focus:outline-none focus:border-blue-400"
                   value={formData.password}
                   onChange={handleChange}
-                  required
+                  // required
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
-                disabled={loading}
-              >
-                Sign In
-              </button>
+              <div className="flex justify-between mt-4">
+                <button
+                  type="button"
+                  onClick={handleCancel}
+                  className="w-1/2 mr-2 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-200 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 "
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="w-1/2 ml-2 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 "
+                  disabled={loading}
+                >
+                  Sign In
+                </button>
+              </div>
             </form>
           </>
         )}
