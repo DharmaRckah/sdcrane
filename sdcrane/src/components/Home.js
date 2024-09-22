@@ -370,15 +370,15 @@ const Home = () => {
           /* Responsive styles for devices with max-width of 768px */
           @media (max-width: 768px) {
             /* Ensure WhatsApp, Scroll-to-Top, and Contact Icons are positioned properly */
-            a, div {
+            // a, div {
             
-              bottom: 20px;
-              padding: 5px;
-            }
+            //   bottom: 20px;
+            //   padding: 5px;
+            // }
 
-            div {
-             top:"5px" /* Adjusted for proper space above WhatsApp icon */
-            }
+            // div {
+            //  top:"5px" /* Adjusted for proper space above WhatsApp icon */
+            // }
           }
         `}
       </style>

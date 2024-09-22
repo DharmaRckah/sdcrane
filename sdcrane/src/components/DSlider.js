@@ -112,14 +112,14 @@ const DemoCarousel = () => {
     return () => clearInterval(interval);
   }, [totalSlides]);
 
-  const carouselContainerStyle = {
+  const carouselContainerStylemm = {
     width: "100%",
-    height: "80vh", // 80% of the viewport height
+    height: "90vh", // 80% of the viewport height
     margin: 0, // No margin at the top or bottom
     position: "relative", // Ensure buttons are positioned correctly
   };
 
-  const carouselImageStyle = {
+  const carouselImageStylemm = {
     width: "100%",
     height: "100%",
     objectFit: "contain", // Ensure images fill the container properly
@@ -129,11 +129,11 @@ const DemoCarousel = () => {
     <div>
       <style>
         {`
-          .carousel-container {
+          .carousel-containermm {
             height: 90vh; /* 80% of the viewport height */
           }
           @media (max-width: 768px) {
-            .carousel-container {
+            .carousel-containermm {
               height: 90vh; /* Maintain 80% height for mobile devices */
               /* Remove top margin */
             }
@@ -141,7 +141,7 @@ const DemoCarousel = () => {
         `}
       </style>
 
-      <div className="carousel-container" style={carouselContainerStyle}>
+      <div className="carousel-container" style={carouselContainerStylemm}>
         <Carousel
           showThumbs={false}
           autoPlay={true}
@@ -164,7 +164,7 @@ const DemoCarousel = () => {
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                style={carouselImageStyle}
+                style={carouselImageStylemm}
               />
             </motion.div>
           ))}
