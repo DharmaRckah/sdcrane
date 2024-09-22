@@ -13,7 +13,7 @@ const ContactUs = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#333",
+        backgroundColor: "#fcba03",
         color: "#fff",
         p: 3,
         position: "relative",

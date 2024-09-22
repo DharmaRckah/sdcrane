@@ -1,14 +1,7 @@
 import React from "react";
 import loadimg from "../assets/im/loadTest.jpeg";
 import measurmentimg from "../assets/im/measurment.jpeg";
-import {
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-} from "@mui/material";
+import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
 
 const qualityData = [
   {
@@ -36,41 +29,42 @@ const QualityPolicy = () => {
       maxWidth="lg"
       sx={{ padding: { xs: 2, sm: 4 }, backgroundColor: "#f4f4f4" }}
     >
-      <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        sx={{
-          fontWeight: "bold",
-          color: "#ff8225",
-          marginBottom: { xs: 2, sm: 4 },
-          fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
-        }}
+      {/* Main header section with background */}
+      <div
+        className="bg-cover bg-center py-8 px-4 mb-6"
+        style={{ backgroundImage: "url(/path-to-your-background-image.jpg)" }}
       >
-        Quality Policy
-      </Typography>
+        <Typography
+          variant="h4"
+          align="center"
+          gutterBottom
+          sx={{
+            fontWeight: "bold",
+            color: "white",
+            fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
+            backgroundColor: "#f7bb05", // For readability
+            padding: { xs: 1, sm: 2 },
+            borderRadius: "8px",
+          }}
+        >
+          Quality Policy
+        </Typography>
+      </div>
+
+      {/* Cards section */}
       <Grid container spacing={{ xs: 2, sm: 4 }}>
         {qualityData.map((item, index) => (
           <Grid item xs={12} md={6} key={index}>
-            <Card
-              sx={{
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.3s ease-in-out",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                image={item.image}
-                alt={item.title}
-                sx={{ height: 200, objectFit: "cover" }}
-              />
-              <CardContent>
-                <Typography   
+            <Card className="shadow-lg hover:shadow-2xl transition-transform duration-300 ease-in-out h-full flex flex-col">
+              <div className="relative">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-[200px] object-fill md:h-[250px] lg:h-[300px]"
+                />
+              </div>
+              <CardContent className="flex-grow">
+                <Typography
                   variant="h6"
                   gutterBottom
                   sx={{ fontWeight: "bold", color: "#ff8225" }}
