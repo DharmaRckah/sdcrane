@@ -1,0 +1,31 @@
+
+
+/* Sliding Text Animation */
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: slide-right-to-left 4s linear infinite;
+}
+
+/* Add this CSS to your stylesheet */
+@media (max-width: 768px) {
+  .menu-bar {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-bar {
+    display: none;
+  }
+}
