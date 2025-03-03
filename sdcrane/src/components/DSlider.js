@@ -143,12 +143,12 @@ import React, { useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
-import singleGrider from "../assets/im/1.jpeg";
-import doubleGrider from "../assets/im/2.jpeg";
-import jib from "../assets/im/3.jpeg";
-import t1 from "../assets/im/4.jpeg";
-import t2 from "../assets/im/loadTest.jpeg";
-import t3 from "../assets/im/measurment.jpeg";
+import singleGrider from "../assets/im/sdc-2.jpg";
+import doubleGrider from "../assets/im/sdc-3.jpg";
+import jib from "../assets/im/sdc-5.jpg";
+import t1 from "../assets/im/sdc-6.jpg";
+import t2 from "../assets/im/sdc-7.jpg";
+import t3 from "../assets/im/sdc-10.jpg";
 
 const DemoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
